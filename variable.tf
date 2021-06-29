@@ -13,7 +13,7 @@ variable "region" {
 
 variable "target_project_name" {
   type    = string
-  default = "seed-project-dobrozhan"
+  default = "gcp-project-june-2021"
 }
 
 variable "domain" {
@@ -30,4 +30,15 @@ variable "folder_id" {
 
 variable "org_id" {
   type = string
+}
+
+variable "prefix" {
+  default = "dev"
+}
+
+variable "function_location" {
+}
+
+output "cloud_function_url" {
+  value = google_cloudfunctions_function.web_app.https_trigger_url
 }
